@@ -28,7 +28,7 @@ if (mySoftwareSerial.available()){
 
       if (command == 'F') {
         Serial.println("forward");
-
+        
       if (command == 'B') {
         Serial.println("back");
 
@@ -41,4 +41,13 @@ if (mySoftwareSerial.available()){
 }
 }
 }}}}
-amongus gustavo
+amongus
+
+void forward(){
+esc1.attach(3, 1000, 2000);
+esc2.attach(5, 1000, 2000);
+}
+
+
+
+
