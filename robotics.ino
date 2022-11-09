@@ -4,9 +4,6 @@ Servo esc2;
 //bluetooth
 #include <SoftwareSerial.h>
 SoftwareSerial mySoftwareSerial(12,13); // RX | TX
-
-
-
 char command;
 
 void setup() {
