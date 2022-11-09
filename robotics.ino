@@ -5,19 +5,7 @@ Servo esc2;
 #include <SoftwareSerial.h>
 SoftwareSerial mySoftwareSerial(12,13); // RX | TX
 
-void forward(){
-//esc1.attach(3, 1000, 2000);
-//esc2.attach(5, 1000, 2000); dont think its needed might be wrong (likely)
-esc1.writeMicroseconds(1600);
-esc2.writeMicroseconds(1600);
-}
 
-void back(){
-//esc1.attach(3, 1000, 2000);
-//esc2.attach(5, 1000, 2000); dont think its needed might be wrong (likely)
-esc1.writeMicroseconds(1400);
-esc2.writeMicroseconds(1400);
-}
 
 char command;
 
@@ -56,7 +44,19 @@ if (mySoftwareSerial.available()){
 }
 }}}}
 
+void forward(){
+//esc1.attach(3, 1000, 2000);
+//esc2.attach(5, 1000, 2000); dont think its needed might be wrong (likely)
+esc1.writeMicroseconds(1600);
+esc2.writeMicroseconds(1600);
+}
 
+void back(){
+//esc1.attach(3, 1000, 2000);
+//esc2.attach(5, 1000, 2000); dont think its needed might be wrong (likely)
+esc1.writeMicroseconds(1400);
+esc2.writeMicroseconds(1400);
+}
 
 
 
