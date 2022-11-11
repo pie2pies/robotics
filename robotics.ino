@@ -12,8 +12,8 @@ void setup() {
   // put your setup code here, to run once:
 esc1.attach(3, 1000, 2000);
 esc2.attach(5, 1000, 2000);
-//esc3.attach(?, 1000, 2000);
-//esc4.attach(?, 1000, 2000);
+//esc3.attach(9, 1000, 2000);
+//esc4.attach(10, 1000, 2000);
 //bluetooth
  Serial.begin(9600);
     Serial.println("Starting i guess?");
