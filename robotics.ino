@@ -47,19 +47,19 @@ void loop() {
             Serial.println("right");
             //right();
 
-            /*    if (command == '?') {
+            /*    if (command == 'G') {
                   Serial.println("45 diagonal foward left");
                   //fl(); }
 
-                  if (command == '?') {
+                  if (command == 'I') {
                     Serial.println("45 diagonal foward right");
                     //fr(); }
 
-                    if (command == '?') {
+                    if (command == 'J') {
                       Serial.println("45 diagonal back right");
                       //br();}
 
-                      if (command == '?') {
+                      if (command == 'H') {
                         Serial.println("45 diagonal back left");
                         //bl(); }*/
           }
