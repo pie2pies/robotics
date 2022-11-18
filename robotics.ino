@@ -1,8 +1,8 @@
 #include <Servo.h>
-Servo esc1;
-Servo esc2;
-//Servo esc3;
-//Servo esc4;
+Servo LeftFrontWheel;
+Servo RightFrontWheel;
+//Servo LeftBackWheel;
+//Servo RightBackWheel;
 //bluetooth
 #include <SoftwareSerial.h>
 SoftwareSerial mySoftwareSerial(12, 13); // RX | TX
@@ -10,10 +10,10 @@ char command;
 
 void setup() {
   // put your setup code here, to run once:
-  esc1.attach(3, 1000, 2000);
-  esc2.attach(5, 1000, 2000);
-  //esc3.attach(?, 1000, 2000);
-  //esc4.attach(?, 1000, 2000);
+  LeftFrontWheel.attach(3, 1000, 2000);
+  RightFrontWheel.attach(5, 1000, 2000);
+  //LeftBackWheel.attach(?, 1000, 2000);
+  //RightBackWheel.attach(?, 1000, 2000);
   //bluetooth
   Serial.begin(9600);
   Serial.println("Starting i guess?");
@@ -22,46 +22,59 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  esc1.writeMicroseconds(1500);
-  esc2.writeMicroseconds(1500);
-  //esc3.writeMicroseconds(1500);
-  //esc4.writeMicroseconds(1500);
+  LeftFrontWheel.writeMicroseconds(1500);
+  RightFrontWheel.writeMicroseconds(1500);
+  //LeftBackWheel.writeMicroseconds(1500);
+  //RightBackWheel.writeMicroseconds(1500);
   //bluetooth
   if (mySoftwareSerial.available()) {
     command = mySoftwareSerial.read();
     Serial.println(command);
 
     if (command == 'F') {
-      Serial.println("forward");
-      //foward();
+      Serial.println("moveForward");
+      //moveForward();
 
       if (command == 'B') {
-        Serial.println("back");
-        //back();
+        Serial.println("moveBackward");
+        //moveBackward();
 
         if (command == 'L') {
-          Serial.println("left");
-          //left();
+          Serial.println("moveSidewaysLeft");
+          //moveSidewaysLeft();
 
           if (command == 'R') {
-            Serial.println("right");
-            //right();
+            Serial.println("moveSidewaysRight");
+            //moveSidewaysRight();
 
             /*    if (command == 'G') {
-                  Serial.println("45 diagonal foward left");
-                  //fl(); }
+                  Serial.println("moveLeftForward");
+                  //moveLeftForward(); }
 
                   if (command == 'I') {
-                    Serial.println("45 diagonal foward right");
-                    //fr(); }
+                    Serial.println("moveRightForward");
+                    //moveRightForward(); }
 
                     if (command == 'J') {
-                      Serial.println("45 diagonal back right");
-                      //br();}
+                      Serial.println("moveRightBackward");
+                      //moveRightBackward();}
 
                       if (command == 'H') {
-                        Serial.println("45 diagonal back left");
-                        //bl(); }*/
+                        Serial.println("moveLeftBackward");
+                        //moveLeftBackward(); }
+                        
+                        if (command == '?') {
+                        Serial.println("rotateLeft");
+                        //rotateLeft(); }
+                        
+                        if (command == '?') {
+                        Serial.println("rotateRight");
+                        //rotateRight(); }
+                        
+                         if (command == '?') {
+                        Serial.println("stopMoving");
+                        //stopMoving(); }
+                        */
           }
         }
       }
@@ -69,58 +82,77 @@ void loop() {
   }
 }
 
-void forward() {
-  esc1.writeMicroseconds(1600);
-  esc2.writeMicroseconds(1600);
-  //esc3.writeMicroseconds(1600);
-  //esc4.writeMicroseconds(1600);
+void moveForward() {
+  LeftFrontWheel(1600);
+  LeftBackWheel(1600);
+  //RightFrontWheel(1600);
+  //RightBackWheel(1600);
 }
 
-void back() {
-  esc1.writeMicroseconds(1400);
-  esc2.writeMicroseconds(1400);
-  //esc3.writeMicroseconds(1400);
-  //esc4.writeMicroseconds(1400);
+void moveBackward() {
+  LeftFrontWheel(-1600);
+  //LeftBackWheel(-1600);
+   RightFrontWheel(-1600);
+  //RightBackWheel(-1600);
+}
+void moveSidewaysRight() {
+  LeftFrontWheel(1600);
+  //LeftBackWheel(1400);
+  RightFrontWheel(1400);
+  //RightBackWheel(1600);
 }
 
-void right() {
-  esc1.writeMicroseconds(1600);
-  esc2.writeMicroseconds(1400);
-  //esc3.writeMicroseconds(1400);
-  //esc4.writeMicroseconds(1600);
+void moveSidewaysLeft() {
+  LeftFrontWheel(1400);
+  //LeftBackWheel(1600);
+  RightFrontWheel(1600);
+ // RightBackWheel(1400);
 }
 
-void left() {
-  esc1.writeMicroseconds(1400);
-  esc2.writeMicroseconds(1600);
-  //esc3.writeMicroseconds(1600);
-  //esc4.writeMicroseconds(1400);
+
+void rotateLeft() {
+  LeftFrontWheel(1400);
+  //LeftBackWheel(1400);
+  RightFrontWheel(1600);
+ // RightBackWheel(1600);
 }
 
-void fl() {
-  esc1.writeMicroseconds(1500);
-  esc2.writeMicroseconds(1600);
-  //esc3.writeMicroseconds(1600);
-  //esc4.writeMicroseconds(1500);
+void rotateRight() {
+  LeftFrontWheel(1600);
+ // LeftBackWheel(1600);
+  RightFrontWheel(1400);
+  //RightBackWheel(1400);
 }
 
-void fr() {
-  esc1.writeMicroseconds(1600);
-  esc2.writeMicroseconds(1500);
-  //esc3.writeMicroseconds(1500);
-  //esc4.writeMicroseconds(1600);
+void moveRightForward() {
+  LeftFrontWheel(1600);
+  //LeftBackWheel(1500);
+  RightFrontWheel(1500);
+  //RightBackWheel(1600);
 }
 
-void bl() {
-  esc1.writeMicroseconds(1400);
-  esc2.writeMicroseconds(1500);
-  //esc3.writeMicroseconds(1500);
-  //esc4.writeMicroseconds(1400);
+ void moveRightBackward() {
+  LeftFrontWheel(1500);
+  //LeftBackWheel(1400);
+  RightFrontWheel(1400);
+  //RightBackWheel(1500);
+}
+void moveLeftForward() {
+  LeftFrontWheel(1500)
+  //LeftBackWheel(1600);
+  RightFrontWheel(1600)
+  //RightBackWheel(1500);
+}                 
+void moveLeftBackward() {
+  LeftFrontWheel(1400);
+  //LeftBackWheel(1500);
+  RightFrontWheel(1500);
+  //RightBackWheel(1400);
 }
 
-void br() {
-  esc1.writeMicroseconds(1500);
-  esc2.writeMicroseconds(1400);
-  //esc3.writeMicroseconds(1400);
-  //esc4.writeMicroseconds(1500);
+void stopMoving() {
+  LeftFrontWheel(1500);
+  //LeftBackWheel(1500);
+  RightFrontWheel(1500);
+ //RightBackWheel(1500);
 }
