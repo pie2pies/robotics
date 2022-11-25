@@ -83,76 +83,76 @@ void loop() {
 }
 
 void moveForward() {
-  LeftFrontWheel(1600);
-  LeftBackWheel(1600);
-  //RightFrontWheel(1600);
-  //RightBackWheel(1600);
+  LeftFrontWheel.writeMicroseconds(1600);
+  //LeftBackWheel.writeMicroseconds(1600);
+  RightFrontWheel.writeMicroseconds(1600);
+  //RightBackWheel.writeMicroseconds(1600);
 }
 
 void moveBackward() {
-  LeftFrontWheel(-1600);
-  //LeftBackWheel(-1600);
-   RightFrontWheel(-1600);
-  //RightBackWheel(-1600);
+  LeftFrontWheel.writeMicroseconds(-1600);
+  //LeftBackWheel.writeMicroseconds(-1600);
+   RightFrontWheel.writeMicroseconds(-1600);
+  //RightBackWheel.writeMicroseconds(-1600);
 }
 void moveSidewaysRight() {
-  LeftFrontWheel(1600);
-  //LeftBackWheel(1400);
-  RightFrontWheel(1400);
-  //RightBackWheel(1600);
+  LeftFrontWheel.writeMicroseconds(1600);
+  //LeftBackWheel.writeMicroseconds(1400);
+  RightFrontWheel.writeMicroseconds(1400);
+  //RightBackWheel.writeMicroseconds(1600);
 }
 
 void moveSidewaysLeft() {
-  LeftFrontWheel(1400);
-  //LeftBackWheel(1600);
-  RightFrontWheel(1600);
- // RightBackWheel(1400);
+  LeftFrontWheel.writeMicroseconds(1400);
+  //LeftBackWheel.writeMicroseconds(1600);
+  RightFrontWheel.writeMicroseconds(1600);
+ // RightBackWheel.writeMicroseconds(1400);
 }
 
 
 void rotateLeft() {
-  LeftFrontWheel(1400);
-  //LeftBackWheel(1400);
-  RightFrontWheel(1600);
- // RightBackWheel(1600);
+  LeftFrontWheel.writeMicroseconds(1400);
+  //LeftBackWheel.writeMicroseconds(1400);
+  RightFrontWheel.writeMicroseconds(1600);
+ // RightBackWheel.writeMicroseconds(1600);
 }
 
 void rotateRight() {
-  LeftFrontWheel(1600);
- // LeftBackWheel(1600);
-  RightFrontWheel(1400);
-  //RightBackWheel(1400);
+  LeftFrontWheel.writeMicroseconds(1600);
+ // LeftBackWheel.writeMicroseconds(1600);
+  RightFrontWheel.writeMicroseconds(1400);
+  //RightBackWheel.writeMicroseconds(1400);
 }
 
 void moveRightForward() {
-  LeftFrontWheel(1600);
-  //LeftBackWheel(1500);
-  RightFrontWheel(1500);
-  //RightBackWheel(1600);
+  LeftFrontWheel.writeMicroseconds(1600);
+  //LeftBackWheel.writeMicroseconds(1500);
+  RightFrontWheel.writeMicroseconds(1500);
+  //RightBackWheel.writeMicroseconds(1600);
 }
 
  void moveRightBackward() {
-  LeftFrontWheel(1500);
-  //LeftBackWheel(1400);
-  RightFrontWheel(1400);
-  //RightBackWheel(1500);
+  LeftFrontWheel.writeMicroseconds(1500);
+  //LeftBackWheel.writeMicroseconds(1400);
+  RightFrontWheel.writeMicroseconds(1400);
+  //RightBackWheel.writeMicroseconds(1500);
 }
 void moveLeftForward() {
-  LeftFrontWheel(1500)
-  //LeftBackWheel(1600);
-  RightFrontWheel(1600)
-  //RightBackWheel(1500);
+  LeftFrontWheel.writeMicroseconds(1500);
+  //LeftBackWheel.writeMicroseconds(1600);
+  RightFrontWheel.writeMicroseconds(1600);
+  //RightBackWheel.writeMicroseconds(1500);
 }                 
 void moveLeftBackward() {
-  LeftFrontWheel(1400);
-  //LeftBackWheel(1500);
-  RightFrontWheel(1500);
-  //RightBackWheel(1400);
+  LeftFrontWheel.writeMicroseconds(1400);
+  //LeftBackWheel.writeMicroseconds(1500);
+  RightFrontWheel.writeMicroseconds(1500);
+  //RightBackWheel.writeMicroseconds(1400);
 }
 
 void stopMoving() {
-  LeftFrontWheel(1500);
-  //LeftBackWheel(1500);
-  RightFrontWheel(1500);
- //RightBackWheel(1500);
+  LeftFrontWheel.writeMicroseconds(1500);
+  //LeftBackWheel.writeMicroseconds(1500);
+  RightFrontWheel.writeMicroseconds(1500);
+  //RightBackWheel.writeMicroseconds(1500);
 }
